@@ -34,7 +34,7 @@ class BallFollower(Node):
 
         self.cap = cv2.VideoCapture(0)
         if not self.cap.isOpened():
-            self.get_logger().error("Không mở được webcam.")
+            self.get_logger().error("khong mo duoc camera.")
             exit()
 
         self.timer = self.create_timer(0.05, self.timer_callback)  # 20Hz
@@ -60,7 +60,7 @@ class BallFollower(Node):
     def timer_callback(self):
         ret, frame = self.cap.read()
         if not ret:
-            self.get_logger().warning("Không đọc được khung hình.")
+            self.get_logger().warning("Khong doc duoc khung hinh.")
             return
 
         frame_center_x = frame.shape[1] // 2
